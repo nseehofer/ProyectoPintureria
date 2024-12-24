@@ -13,12 +13,6 @@ public class GestionDePintureria {
 	private static final Scanner TECLADO = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		// TODO: Escriba el codigo necesario para garantizar el correcto funcionamiento
-		// del software. Para armar el menu, se debera utilizar el enum MenuPrincipal,
-		// buscando llevar el codigo a ejecutarse (en cada caso del menu) a un metodo
-		// apropiado (Ver los métodos incluídos a continuación).
-		// Es necesario solicitar la cantidad de latas posibles de almacenar en una
-		// pinturería.
 
 		String nombre = ingresarString("\nIngrese el nombre de su pintureria: ");
 		int cantidadDeLatasDePintura = ingresarNumeroEntero("\nIngresar la cantidad de latas de pintura: ");
@@ -55,18 +49,6 @@ public class GestionDePintureria {
 	}
 
 	private static void agregarLataDePintura(Pintureria pintureria) {
-		// TODO: El usuario debera ingresar los datos de una lata de pintura para que
-		// sea agregada a las latas que posee la pintureria.
-		// Cuando se agrega una lata, no debe tener el mismo codigo de una lata ya
-		// existente. Es necesario validar el codigo que se ingresa. En caso existir en
-		// la pintureria, una lata con el codigo ingresado, se debera mostrar un mensaje
-		// apropiado y seguir solicitando el ingreso de un nuevo codigo, hasta obtener
-		// un codigo no existente. Para los tipos de pintura se debera ingresar la
-		// palabra MATE o SATINADA, sin importar si es en mayusculas o minusculas (o
-		// mixto). El stock ingresado debe ser mayor a cero y se debe seguir solicitando
-		// en caso de ingresar un valor invalido.
-		// Si se agrega correctamente la lata de pintura a la pintureria, mostrar un
-		// mensaje de exito, caso contrario, uno de error.
 
 		mostrarPorPantalla(
 				"\nIngrese los datos de la lata de pintura que desea agregar, pediremos el codigo nuevamente si el ingresado nos arroja una lata que ya existe: ");
@@ -91,15 +73,6 @@ public class GestionDePintureria {
 	}
 
 	private static void venderLatasDePintura(Pintureria pintureria) {
-		// TODO: Se deberan mostrar las latas de pintura ordenadas por nombre
-		// ascendente, que dispone la pintureria para
-		// que el usuario pueda ingresar el codigo y la cantidad de latas que desea
-		// vender. Solo se puede vender si tenemos en stock la cantidad de latas de
-		// pintura ingresada.
-		// En caso de ingresar un numero de latas de pintura a vender, mayor al stock de
-		// esa lata de pintura,
-		// mostrar un mensaje acorde y no procesar la venta. Si la cantidad es valida,
-		// proceder a realizar la venta y mostrar un mensaje de exito.
 
 		mostrarLatasDePintura(pintureria.obtenerLatasDePinturaOrdenadasPorNombreAscendente());
 
@@ -117,12 +90,6 @@ public class GestionDePintureria {
 	}
 
 	private static void mostrarLatasDePinturaMasBarataPorTipoDePintura(Pintureria pintureria) {
-		// TODO: Deberan mostrarse las latas de pintura mas baratas para cada tipo de
-		// pintura (SATINADA o MATE) de la pintureria. Cabe destacaer que solo se puede
-		// mostrar una lata por tipo de pintura. Si no existe al menos una lata para el
-		// tipo, mostrar un mensaje apropiado.
-		// Ejemplo: Pintura SATINADA mas barata: <pintura>
-		// Ejemplo: Pintura MATE mas barata: <pintura>
 
 		TipoDePintura tipoDePintura = obtenerOpcionDeEnumParaTipoDePintura(
 				"\nIngrese el tipo de pintura que desea buscar: ");
@@ -141,9 +108,6 @@ public class GestionDePintureria {
 	}
 
 	private static void mostrarCantidadDeLatasEnStockPorTipoDePintura(Pintureria pintureria) {
-		// TODO: Mostrar la cantidad de latas de pinturas satinadas y la cantidad de
-		// latas de pinturas mate que tiene la pintureria.
-		// Ejemplo: Pinturas SATINADAS: 10 - Pinturas MATE: 5
 
 		TipoDePintura tipoDePintura = obtenerOpcionDeEnumParaTipoDePintura("\nIngresar el tipo de pintura deseado: ");
 
@@ -153,11 +117,6 @@ public class GestionDePintureria {
 	}
 
 	private static void mostrarResumenPintureria(Pintureria pintureria) {
-		// TODO: Se debera mostrar como resumen, las latas de pintura que tiene
-		// actualmente la pintureria (con stock actualizado y precio), ordenadas por
-		// nombre ascendente.
-		// Ademas, debe mostrarse la cantidad de latas de pintura vendidas y el saldo
-		// actual de la pintureria.
 
 		LataDePintura[] latasOrdenadas = pintureria.getLatasDePintura();
 		LataDePintura aux = null;
@@ -173,8 +132,6 @@ public class GestionDePintureria {
 			}
 
 		}
-
-		// FALTA: (con stock actualizado y precio)
 
 		for (int i = 0; i < latasOrdenadas.length; i++) {
 			if (latasOrdenadas[i] != null) {
